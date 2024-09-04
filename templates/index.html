@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fretboard Memorizer</title>
+    <style>
+        body {
+            font-family: 'Verdana', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #e0f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            max-width: 600px;
+            width: 100%;
+            position: relative;
+        }
+        .logo {
+            font-size: 3em;
+            color: #00796b;
+            margin: 0;
+            padding: 10px;
+        }
+        .intro-text {
+            font-size: 1.2em;
+            color: #00796b;
+            margin: 20px 0;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            background: #00796b;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 8px;
+            transition: background 0.3s, transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .btn:hover {
+            background: #004d40;
+            transform: translateY(-2px);
+        }
+        .btn:active {
+            background: #00332e;
+            transform: translateY(0);
+        }
+        .game-icon {
+            font-size: 5em;
+            color: #00796b;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="game-icon">🎸</div>
+        <h1 class="logo">Fretboard Memorizer</h1>
+        <p class="intro-text">A tool created to help me memorize the fretboard for all of the weird tunings I insist on using...</p>
+        <div class="button-container">
+			<a href={{ url_for('fretboard_memorizer') }} class="btn">MEMORIIIIIZZZEEE</a>
+			<a href={{ url_for('instructions') }} class="btn">Instructions</a>
+        </div>
+    </div>
+</body>
+</html>

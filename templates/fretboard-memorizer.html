@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Screen - Fretboard Memorizer</title>
+    <style>
+        body {
+            font-family: 'Verdana', sans-serif;
+            margin: 0;
+            padding: 0;
+			{% if streak == 0 %}
+			background: #f3c7c7;
+			{% else %}
+			background: #f3f3f3;
+			{% endif %}
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            max-width: 600px;
+            width: 100%;
+        }
+        .logo {
+            font-size: 3em;
+            color: #00796b;
+            margin: 0;
+            padding: 10px;
+        }
+        .game-screen {
+            font-size: 1.2em;
+            color: #00796b;
+            margin: 20px 0;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            background: #00796b;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 8px;
+            transition: background 0.3s, transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .btn:hover {
+            background: #004d40;
+            transform: translateY(-2px);
+        }
+        .btn:active {
+            background: #00332e;
+            transform: translateY(0);
+        }
+        .game-icon {
+            font-size: 5em;
+            color: #00796b;
+            margin-bottom: 20px;
+        }
+    </style>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			function refreshPage() {
+				location.reload();
+			}
+
+			setInterval(refreshPage, 2000);
+		});
+	</script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="game-icon">🎸</div>
+        <h1 class="logo">Fretboard Memorizer</h1>
+        <div class="game-screen">
+            <p>Play the following note:</p>
+			<p><b>{{ actual_note }}</b></p>
+			<p>Streak: <b>{{ streak }}</b></p>
+        </div>
+        <div class="button-container">
+			<a href={{ url_for("index") }} class="btn">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>
+
